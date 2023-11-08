@@ -55,6 +55,8 @@ rules:
         check-multi-line-strings: false
     key-duplicates: enable
     line-length:
+        ignore: |
+            action.yml
         level: warning
         max: 140
         allow-non-breakable-words: true
