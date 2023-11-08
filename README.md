@@ -10,7 +10,7 @@ based on the `.pre-commit-configuration.yaml` and poetry setup.
 
 ## Inputs
 
-```
+```yaml
 inputs:
   python-version:
     description: |
@@ -51,7 +51,7 @@ inputs:
 
 ## Usage
 
-```
+```yaml
 name: Pull Request
 on:
     push:
