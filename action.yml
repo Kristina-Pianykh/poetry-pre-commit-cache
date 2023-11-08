@@ -61,12 +61,14 @@ runs:
       id: install-py-dependencies
       if: steps.restore-cache.outputs.cache-hit != 'true'
       run: poetry install --no-interaction --no-root
+      shell: bash
     - name: Install pre-commit hooks
       id: install-pre-commit-hooks
       if: steps.restore-cache.outputs.cache-hit != 'true'
       run: |
           source .venv/bin/activate
           pre-commit install-hooks
+      shell: bash
     - uses: actions/cache/save@v3
       if: |
           steps.install-poetry.outcome == 'success' &&
@@ -88,9 +90,11 @@ runs:
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
               echo "$file was changed"
           done
+      shell: bash
     - name: Run pre-commit
       env:
         HOOKS_TO_SKIP: ${{ inputs.hooks-to-skip }}
       run: |
           source .venv/bin/activate
           SKIP=$HOOKS_TO_SKIP pre-commit run --files ${{ steps.changed-files.outputs.all_changed_files }}
+      shell: bash
