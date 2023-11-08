@@ -8,6 +8,47 @@ This repo contains a action to run various Python tools including:
 
 based on the `.pre-commit-configuration.yaml` and poetry setup.
 
+## Inputs
+
+```
+inputs:
+  python-version:
+    description: |
+      Python version to use
+      Default is 3.9.
+    required: true
+    default: '3.9'
+  poetry-version:
+    description: |
+      Poetry version to use
+      Default is 1.4.2.
+    required: true
+    default: '1.4.2'
+  hooks-to-skip:
+    description: |
+      pre-commit hooks to skip
+      should be passed with the comma separator
+      e.g.: sqlfluff-fix,sqlfluff-lint,terraform_fmt,terrascan
+      Default is run all pre-commit hooks.
+    required: false
+    default: ''
+  cache-paths:
+    description: |
+      A list of files, directories, and wildcard patterns to cache.
+      Default are .venv, ~/.local and ~/.cache/pre-commit.
+    required: true
+    default: |
+        .venv
+        ~/.local
+        ~/.cache/pre-commit
+  tflint-version:
+    description: |
+      The version of TFlint to install
+      Default is v0.48.0.
+    required: false
+    default: v0.48.0
+```
+
 ## Usage
 
 ```
