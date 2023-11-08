@@ -1,12 +1,12 @@
 # poetry-pre-commit-cache
 
-This repo contains a action to run various Python tools including:
+This repo contains an action to install and cache the following tools:
 
 * [poetry](https://python-poetry.org/docs/)
 * [pre-commit](https://pre-commit.com/)
 * [TFlint](https://github.com/terraform-linters/tflint)
 
-based on the `.pre-commit-configuration.yaml` and poetry setup.
+The cache is determined primarily by `poetry.lock` and `.pre-commit-configuration.yaml`.
 
 ## Inputs
 
