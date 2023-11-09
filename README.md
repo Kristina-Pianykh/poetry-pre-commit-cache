@@ -70,8 +70,9 @@ jobs:
                     fetch-depth: 0
 
             - id: pre-commit
-              uses: Kristina-Pianykh/poetry-pre-commit-cache@main
+              uses: Kristina-Pianykh/poetry-pre-commit-cache@v1.1
               with:
                   python-version: '3.10'
                   poetry-version: '1.4.2'
+                  tflint-version: 'v0.48.0'
 ```
