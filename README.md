@@ -16,14 +16,14 @@ inputs:
     description: |
       Python version to use
       Default is 3.9.
-    required: true
+    required: false
     default: '3.9'
   poetry-version:
     description: |
       Poetry version to use
-      Default is 1.4.2.
-    required: true
-    default: '1.4.2'
+      Default is 1.7.0.
+    required: false
+    default: '1.7.0'
   hooks-to-skip:
     description: |
       pre-commit hooks to skip
@@ -36,17 +36,17 @@ inputs:
     description: |
       A list of files, directories, and wildcard patterns to cache.
       Default are .venv, ~/.local and ~/.cache/pre-commit.
-    required: true
+    required: false
     default: |
         .venv
         ~/.local
         ~/.cache/pre-commit
   tflint-version:
     description: |
-      The version of TFlint to install
-      Default is v0.48.0.
+      The version of TFlint to install if any
+      Default is skipping insllation of TFlint.
     required: false
-    default: v0.48.0
+    default: ''
 ```
 
 ## Usage

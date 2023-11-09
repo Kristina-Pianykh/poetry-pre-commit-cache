@@ -5,13 +5,13 @@ inputs:
     description: |
       Python version to use
       Default is 3.9.
-    required: true
+    required: false
     default: '3.9'
   poetry-version:
     description: |
       Poetry version to use
       Default is 1.7.0.
-    required: true
+    required: false
     default: '1.7.0'
   hooks-to-skip:
     description: |
@@ -25,7 +25,7 @@ inputs:
     description: |
       A list of files, directories, and wildcard patterns to cache.
       Default are .venv, ~/.local and ~/.cache/pre-commit.
-    required: true
+    required: false
     default: |
         .venv
         ~/.local
