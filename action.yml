@@ -82,7 +82,7 @@ runs:
           steps.install-py-dependencies.outcome == 'success' &&
           steps.install-pre-commit-hooks.outcome == 'success'
       with:
-        path: ${{ env.CACHE_PATHS }}
+        path: ${{ inputs.cache-paths }}
         key: ${{ steps.restore-cache.outputs.cache-primary-key }}
     - name: Setup TFLint
       if: ${{ inputs.tflint-version }} != ''
