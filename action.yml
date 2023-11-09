@@ -32,10 +32,10 @@ inputs:
         ~/.cache/pre-commit
   tflint-version:
     description: |
-      The version of TFlint to install
-      Default is v0.48.0.
+      The version of TFlint to install if any
+      Default is skipping insllation of TFlint.
     required: false
-    default: v0.48.0
+    default: ''
 outputs:
   random-number:
     description: "Random number"
@@ -85,6 +85,7 @@ runs:
         path: ${{ env.CACHE_PATHS }}
         key: ${{ steps.restore-cache.outputs.cache-primary-key }}
     - name: Setup TFLint
+      if: ${{ inputs.tflint-version }} != ''
       id: setup-tflint
       uses: terraform-linters/setup-tflint@v4
       with:
