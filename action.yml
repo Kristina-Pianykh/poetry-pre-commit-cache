@@ -52,7 +52,7 @@ runs:
         python-version: ${{ inputs.python-version }}
     - name: Restore cache
       id: restore-cache
-      uses: actions/cache/restore@v3
+      uses: actions/cache/restore@v4
       with:
         path: ${{ inputs.cache-paths }}
         key: |
@@ -76,7 +76,7 @@ runs:
           source .venv/bin/activate
           pre-commit install-hooks
       shell: bash
-    - uses: actions/cache/save@v3
+    - uses: actions/cache/save@v4
       if: |
           steps.install-poetry.outcome == 'success' &&
           steps.install-py-dependencies.outcome == 'success' &&
